@@ -5,15 +5,17 @@ import random
 
 def simulator(initial_carbs, initial_sugar, digestion_rate, insulin_rate,
               total_minutes, start_time):
-    """Constructs a blood glucose equation using the following initial paremeters:
-        initial_carbs -- the intake amount of carbs
-        initial_sugar -- the baseline value of glucose at time zero
-        digestion_rate -- how quickly food is digested
-        insulin_rate -- how quickly insulin is released
-        total_minutes -- amount of time (in minutes) this simulation will
-                         last_carbs
-        start_time -- start time (in minutes), point on timeline where this
-                      simulation will begin
+    """Constructs a blood glucose equation using the following initial
+       paremeters:
+
+       initial_carbs -- the intake amount of carbs
+       initial_sugar -- the baseline value of glucose at time zero
+       digestion_rate -- how quickly food is digested
+       insulin_rate -- how quickly insulin is released
+       total_minutes -- amount of time (in minutes) this simulation will
+                        last_carbs
+       start_time -- start time (in minutes), point on timeline where this
+                     simulation will begin
     """
     def model_func(y, t):
         Ci = y[0]
