@@ -20,9 +20,11 @@ before_install:
   # The next couple lines fix a crash with multiprocessing on Travis and are not specific to using Miniconda
   - sudo rm -rf /dev/shm
   - sudo ln -s /run/shm /dev/shm
-  - git clone https://github.com/anderspitman/tidepool-docker
-  - tidepool-docker/build_containers tidepool-docker anderspitman
-  - tidepool-docker/start_containers tidepool-docker anderspitman
+  - wget https://github.com/anderspitman/tools/blob/docker-build/docker/docker-compose.yml
+    #  - git clone https://github.com/anderspitman/tidepool-docker
+    #  - tidepool-docker/build_containers tidepool-docker anderspitman
+    #  - tidepool-docker/start_containers tidepool-docker anderspitman
+  - docker-compose up
 # Install packages
 install:
   - conda install python=$TRAVIS_PYTHON_VERSION pip numpy pandas nose scipy six patsy python-dateutil statsmodels pytz pymongo requests
