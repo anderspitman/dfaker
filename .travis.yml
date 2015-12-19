@@ -21,12 +21,8 @@ before_install:
   - sudo rm -rf /dev/shm
   - sudo ln -s /run/shm /dev/shm
 
-  # Install docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-
   - wget https://raw.githubusercontent.com/anderspitman/tools/docker-build/docker/docker-compose.yml
-  - ./docker-compose up -d
+  - docker-compose up -d
 # Install packages
 install:
   - conda install python=$TRAVIS_PYTHON_VERSION pip numpy pandas nose scipy six patsy python-dateutil statsmodels pytz pymongo requests
