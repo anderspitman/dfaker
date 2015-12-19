@@ -26,7 +26,7 @@ before_install:
   - chmod +x docker-compose
 
   - wget https://raw.githubusercontent.com/anderspitman/tools/docker-build/docker/docker-compose.yml
-  - ./docker-compose up
+  - ./docker-compose up -d
 # Install packages
 install:
   - conda install python=$TRAVIS_PYTHON_VERSION pip numpy pandas nose scipy six patsy python-dateutil statsmodels pytz pymongo requests
